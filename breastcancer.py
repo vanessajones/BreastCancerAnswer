@@ -87,9 +87,10 @@ def main():
   if predictions2[0] == 0: diagnosis = "BENIGN\n"
   if predictions2[0] == 1: diagnosis = "MALIGNANT \n"  
   print("Class Prediction: " +diagnosis)
+  display = "The breast mass is: " + diagnosis
+  display += "\nTest Accuracy: {0:f}\n".format(accuracy_score)
+  easygui.msgbox(display, ok_button="Submit patient data")
 
-  easygui.msgbox("The breast mass is: " + diagnosis, ok_button="Submit patient data")
-  
 if __name__ == "__main__":
 	print("Breast Cancer Predictor \nCopyright (c) Breast Cancer Answer Inc. 2017 \n")
 	print("Analyzing.................................................................")
